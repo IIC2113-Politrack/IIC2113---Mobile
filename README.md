@@ -1,26 +1,22 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+##[Version Control]
 
-## How to use this template
+- We’ll be using 2 repositories.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+1.- Backend and web:
+https://github.com/IIC2113-Politrack/IIC2113---Api
+2.- Mobile:
+https://github.com/IIC2113-Politrack/IIC2113---Mobile
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+##[Choosen Frameworks]
 
-### With the Ionic CLI:
+-MEAN stack development for webpage and API
+MEAN stands for: 
+Mongo NO-SQL database
+Express server
+Angular frontend
+Node.js for backend
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+For mobile development, we’ll be using IONIC Framework it’s based on Angular 4.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
-
-Then, to run it, cd into `myTabs` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+##[Choosen coding standard]
+https://angular.io/guide/styleguide
