@@ -11,12 +11,13 @@ https://github.com/IIC2113-Politrack/IIC2113---Mobile
 
 MEAN stack development for webpage and API
 MEAN stands for: 
-Mongo NO-SQL database
-Express server
-Angular frontend
-Node.js for backend
+- Mongo NO-SQL database
+- Express server
+- Angular frontend
+- Node.js for backend
 
 For mobile development, we’ll be using IONIC Framework it’s based on Angular 4.
 
 ## [Choosen coding standard]
-https://angular.io/guide/styleguide
+- https://angular.io/guide/styleguide [for angular]
+- http://nodeguide.com/style.html [for node/express]
