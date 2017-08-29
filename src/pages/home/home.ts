@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DataProvider } from '../../providers/data/data';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  public users: Array<any>;
 
+  constructor(public navCtrl: NavController, _data: DataProvider) {
+    _data.getUsers().subscribe((resp) => {
+      this.users = resp
+    })
   }
 
 }
