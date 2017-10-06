@@ -12,7 +12,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, _data: DataProvider) {
     _data.getUsers().subscribe((resp) => {
-      this.users = resp
+      this.users = resp;
+      console.log(resp);
     })
   }
 
