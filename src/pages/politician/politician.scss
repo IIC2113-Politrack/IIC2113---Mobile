@@ -1,0 +1,39 @@
+page-politician {
+
+	.politician-title {
+		background-color: map-get($colors, orangeBar);
+
+		.toolbar-title {
+			color: #f1f1f1;
+		}
+	}
+
+}
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    bottom: 0%;
+    font-size: 0.6em;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1em;
+    font-weight: bold;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
