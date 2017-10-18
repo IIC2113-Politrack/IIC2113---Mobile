@@ -21,6 +21,12 @@ page-proposals {
 		}
 	}
 
+  .proposal-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
 	ion-card {
     	padding: 0;
     	font-size: 1rem;
@@ -49,7 +55,7 @@ page-proposals {
   		width: 100%;
   	}
 
-  	.propuesta{
+  	.propuesta {
   		border: 3px solid solid #233346;
   		min-height: 10px;
   		padding: 0;
@@ -57,13 +63,44 @@ page-proposals {
   		background-color: white;
   	}
 
-  	.propuesta-content {
-  		
-  	}
+    .tags {
+      display: inline-flex;
+      flex: 5;
+      height: 2.1em;
+      line-height: 2.1em;
+      margin-top: 0.2em;
+      padding: 5px 1px 5px 1px;
+    }
+    
+    .apoyo {
+      flex: 1;
+    }
 
+    .proposal-content {
+      text-align: justify;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4; /* number of lines to show */
+      line-height: 1em;        /* fallback */
+      max-height: 4.1em;       /* fallback */
+      padding-bottom: 0.5em;
+    }
+
+    .tag {
+      border-radius: 3px;
+      border: solid 1px map-get($colors, orangeBar);
+      padding: 0px 2px 0px 2px;
+      color: map-get($colors, orangeBar);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 12px;
+      float: right;
+      margin-right: 4px;
+      right: 0;
+      position: static;
+    }
 }
-
-.card-ios {
-  		margin: 1px;
-  		width: 100%;
-  	}

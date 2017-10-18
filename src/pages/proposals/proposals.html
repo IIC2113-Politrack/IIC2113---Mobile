@@ -15,26 +15,32 @@
 
 <ion-content padding>
 
-	<ion-card>
+	<ion-card *ngFor="let proposal of proposals">
 
 	  <ion-item>
 	    <ion-avatar item-start>
-	      <img src="https://votainteligente.cl/cache/cache/d4/e8/d4e8b67e3e9c184a1b21e120500b7ecb.png">
+	      <img src={{proposal.org_pic}}/>
 	    </ion-avatar>
-	    <h3>Política Pública de Salud Mental Coordinada para la prevención del suicidio infantil y adolescente</h3>
-	    <p>Propuesta Nº 175</p>
+	    <h3 class="proposal-title">{{proposal.title}}</h3>
+	    <p>Propuesta Nº {{proposal.num}}</p>
 	  </ion-item>
 
-	  <ion-card-content>
-	    <p>Articular los esfuerzos realizados desde el área de la salud con aquellos emanados desde el sistema escolar a fin de que las acciones tengan repe...</p>
+	  <ion-card-content class="proposal-content">
+	    <p>{{proposal.content}}</p>
 	  </ion-card-content>
 
 	  <ion-row>
-	    <ion-col>
-	      <button ion-button color="primary" clear small icon-start>
+	    <ion-col style="display: inline-flex;">
+	      <button ion-button color="primary" clear small icon-start class="apoyo">
 	        <ion-icon name="hand"></ion-icon>
-	        <div>12</div>
+	        <div>{{proposal.upvotes}}</div>
 	      </button>
+		      <div class="tags">
+		      	<div class="tag" *ngFor="let tag of proposal.tags">
+		      		{{tag}}
+		      	</div>
+		      </div>
+
 	    </ion-col>
 <!-- 	    <ion-col>
 	      <button ion-button color="primary" clear small icon-start>
