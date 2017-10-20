@@ -33,7 +33,9 @@
 	    <ion-col style="display: inline-flex;">
 	      <button ion-button color="primary" clear small icon-start class="apoyo">
 	        <ion-icon name="hand"></ion-icon>
-	        <div>{{proposal.upvotes}}</div>
+	        <div (tap)="sumar()">
+						<div>{{numero}}</div>
+					</div>
 	      </button>
 		      <div class="tags">
 		      	<div class="tag" *ngFor="let tag of proposal.tags">

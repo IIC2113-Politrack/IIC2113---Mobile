@@ -25,13 +25,19 @@ export class ProposalsPage {
   		tags: ["INFANCIA Y JUVENTUD", "SALUD"],
   		upvotes: 12
   	}
-  	]
+		]
+	
+	public numero = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProposalsPage');
+	}
+	
+	public sumar() {
+  	this.numero = this.numero + 1;
   }
 
 }
