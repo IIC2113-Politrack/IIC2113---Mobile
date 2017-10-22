@@ -11,6 +11,7 @@ export class PoliticianPage {
 
   public name = "Políticos";
   public numero = 0;
+  public politician : any;
 
   public politicians = [
   	{
@@ -48,10 +49,12 @@ export class PoliticianPage {
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+	this.politician = this.navParams.get('politician');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PoliticianPage');
+	console.log('ionViewDidLoad PoliticianPage');
   }
 
   public sumar() {

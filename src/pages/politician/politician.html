@@ -7,23 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title class="politician-title">{{name}}</ion-title>
+    <ion-title class="politician-title">{{politician.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content class="card-background-page">
 
-	<ion-grid>
-  		<ion-row>
-    		<ion-col col-6 *ngFor="let politician of politicians">
-    			<ion-card>
-	    			<img src={{politician.pic}}/>
-	    			<div class="card-title">{{politician.name}}</div>
-				</ion-card>
-    		</ion-col>
-  		</ion-row>
-  	</ion-grid>
+	
 
 </ion-content>
 
