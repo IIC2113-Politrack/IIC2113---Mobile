@@ -1,0 +1,69 @@
+<!--
+  Generated template for the ProposalsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Propuestas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-card *ngFor="let proposal of proposals">
+
+	  <ion-item>
+	    <ion-avatar item-start>
+	      <img src={{proposal.org_pic}}/>
+	    </ion-avatar>
+	    <h3 class="proposal-title">{{proposal.title}}</h3>
+	    <p>Propuesta Nº {{proposal.num}}</p>
+	  </ion-item>
+
+	  <ion-card-content class="proposal-content">
+	    <p>{{proposal.content}}</p>
+	  </ion-card-content>
+
+	  <ion-row>
+	    <ion-col style="display: inline-flex;">
+	      <button ion-button color="primary" clear small icon-start class="apoyo">
+	        <ion-icon name="hand"></ion-icon>
+	        <div (tap)="sumar()">
+						<div>{{numero}}</div>
+					</div>
+	      </button>
+		      <div class="tags">
+		      	<div class="tag" *ngFor="let tag of proposal.tags">
+		      		{{tag}}
+		      	</div>
+		      </div>
+
+	    </ion-col>
+<!-- 	    <ion-col>
+	      <button ion-button color="primary" clear small icon-start>
+	        <ion-icon name="text"></ion-icon>
+	        <div>4 Comments</div>
+	      </button>
+	    </ion-col>
+	    <ion-col align-self-center text-center>
+	      <ion-note>
+	        11h ago
+	      </ion-note>
+	    </ion-col> -->
+	  </ion-row>
+
+	</ion-card>
+	
+</ion-content>
+
+
+
+<div class="add-proposal-wrapper">
+	<ion-icon name="add"></ion-icon>
+	
+</div>
