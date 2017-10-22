@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -10,8 +10,11 @@ export class DataProvider {
   constructor(private _http: Http) { }
 
   public getUsers() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
   	console.log("getting users");
-    return this._http.get(this.apiUrl +  "users")
+    let options = new RequestOptions({ headers: headers, method: "get" });
+    return this._http.get(this.apiUrl +  "users", options)
       .map(response => response.json());
   }
 
