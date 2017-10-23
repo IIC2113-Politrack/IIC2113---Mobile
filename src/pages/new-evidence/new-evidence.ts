@@ -99,12 +99,13 @@ export class NewEvidencePage {
                              this.isGood)
       .subscribe((response) => {
         console.log(response);
+        this.spinner.dismiss();
         alert("Evidencia subida exitosamente!");
+        this.close();
       }, (err) => {
         console.log(err);
-      }, () => {
+        alert("error subiendo evidencia");
         this.spinner.dismiss();
-        this.close();
       })
   }
 

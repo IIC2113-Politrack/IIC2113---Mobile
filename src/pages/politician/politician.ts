@@ -39,8 +39,6 @@ export class PoliticianPage {
   this.proposals = this.politician.proposals;
   this.pic = this.navParams.get('pic');
 
-  console.log(this.politician);
-
   }
 
   ionViewDidLoad() {
