@@ -36,4 +36,22 @@ export class DataProvider {
   	  .map(response => response.json())  	
   }
 
+
+  public uploadEvidence(politicianId, proposalId, description, format, content, isGood) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers, method: "post" });
+    let body = {
+      politicianId: politicianId,
+      proposalId: proposalId,
+      data: {
+        description: description,
+        format: format,
+        data: content,
+        isGood: isGood        
+      }
+    }
+    return this._http.post(this.apiUrl + "api/evidences", body, options)
+  }
+
 }

@@ -7,6 +7,7 @@ import { Camera } from '@ionic-native/camera';
 import { OrganizationsPage } from '../pages/organizations/organizations';
 import { ProposalsPage } from '../pages/proposals/proposals';
 import { PoliticiansPage } from '../pages/politicians/politicians';
+import { NewEvidencePage } from '../pages/new-evidence/new-evidence';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PoliticianPage } from '../pages/politician/politician';
 
@@ -25,7 +26,8 @@ import { HttpModule } from '@angular/http';
     PoliticiansPage,
     TabsPage,
     PoliticianPage,
-    NewEvidenceComponent
+    NewEvidenceComponent,
+    NewEvidencePage
   ],
   imports: [
     BrowserModule,
@@ -40,14 +42,15 @@ import { HttpModule } from '@angular/http';
     PoliticiansPage,
     TabsPage,
     PoliticianPage,
-    NewEvidenceComponent
+    NewEvidenceComponent,
+    NewEvidencePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    //Camera
+    Camera
   ]
 })
 export class AppModule {}

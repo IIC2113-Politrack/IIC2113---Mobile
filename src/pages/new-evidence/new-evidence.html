@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+  	<ion-icon class="close" name="ios-close" (click)="close()"></ion-icon>
+    <ion-title>Nueva Evidencia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<div [ngSwitch]="type">
+
+		<div *ngSwitchCase="'image'">
+			<div *ngIf="!data" class="upload-img-container2"></div>
+			<div *ngIf="data" class="upload-img-container">
+				<img [src]="base64data">	
+			</div>
+
+
+			<div class="isGood">
+				<div (click)="toggle()" class="option left" [class.selected]="isGood">a favor!</div>
+				<div (click)="toggle()" class="option right" [class.selected]="!isGood">en contra!</div>
+			</div>
+				
+			<ion-textarea [(ngModel)]="description" rows="1" id="messageInputBox" placeholder="Descripción"></ion-textarea>
+			<button class="action" ion-button color="orangeBar" (click)="send()">Sube tu evidencia!</button>
+
+		</div>
+		<div *ngSwitchCase="'file'">
+		Template for files
+		</div>
+
+	</div>
+
+</ion-content>
