@@ -40,6 +40,7 @@ export class DataProvider {
     console.log("getting politicians");
     return this._http.get(this.apiUrl + "politicians")
       .map(response => response.json())
+  }
 
   public uploadEvidence(politicianId, proposalId, description, format, content, isGood) {
     let headers = new Headers();
