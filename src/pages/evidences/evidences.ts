@@ -16,13 +16,6 @@ export class EvidencesPage {
   	this.proposal = this.navParams.get('proposal');
     this.evidences = this.proposal.evidences;
     this.politician = this.navParams.get('politician');
-    console.log(this.politician);
-    console.log(this.evidences);
-    console.log(this.proposal);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EvidencesPage');
   }
 
 }
