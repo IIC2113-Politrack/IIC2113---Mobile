@@ -1,0 +1,85 @@
+page-new-evidence {
+	background-color: #f4f4f4;
+
+	.close {
+		font-size: 3em;
+		position: absolute;
+		z-index: 100;
+		top: 20px;
+		color: white;
+		left: 20px;
+	}
+
+	.upload-img-container {
+		position: relative;
+		width: 80vw;
+		height: 80vw;
+		margin-left: 10vw;
+		img {
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    max-height: 100%;
+		}
+	}
+
+	.upload-img-container2 {
+		position: relative;
+		width: 80vw;
+		height: 80vw;
+		margin-left: 10vw;
+		background: url('../assets/img/camera.png');
+		background-size: contain;
+	}
+
+	.isGood {
+		width: 80%;
+		margin-left: 10%;
+		display: inline-flex;
+		height: 10vw;
+		line-height: 10vw;
+		border: solid 1px map-get($colors, orangeBar);
+		border-radius: 4px;
+		margin-top: 1em;
+
+	}
+
+	.option {
+		flex: 1;
+		text-align: center;
+	}
+
+	.option.selected {
+		background-color: map-get($colors, orangeBar);
+		color: white;
+		font-size: 14pt;
+	}
+
+	.description {
+		width: 80vw;
+		margin-left: 10vw;
+		height: 20vh;
+		border: solid 1px white;
+		border-radius: 4px;
+	}
+
+	#messageInputBox {
+		width: 80vw;
+		margin-left: 10vw;
+		border: solid 1px white;
+		border-radius: 4px;
+		//minHeight: calc(100vh - 100vw -64px - 3em);
+		height: calc(calc(100vh - 100vw) - calc(64px + 4em));
+	}
+
+	.action {
+		position: absolute;
+		bottom: 1em;
+		width: 80vw;
+		left: 10vw;
+	}
+
+}
