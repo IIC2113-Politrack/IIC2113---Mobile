@@ -51,11 +51,11 @@ describe('MyApp Component', () => {
     expect(component.tabs[0]).toBe(ProposalsPage);
   });
 
-  it('should have ProposalsPage as second tab', () => {
+  it('should have PoliticiansPage as second tab', () => {
     expect(component.tabs[1]).toBe(PoliticiansPage);
   });
 
-  it('should have ProposalsPage as third tab', () => {
+  it('should have OrganizationsPage as third tab', () => {
     expect(component.tabs[2]).toBe(OrganizationsPage);
   });
 
