@@ -11,6 +11,7 @@ import { PoliticiansPage } from '../pages/politicians/politicians';
 import { NewEvidencePage } from '../pages/new-evidence/new-evidence';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PoliticianPage } from '../pages/politician/politician';
+import { EvidencesPage } from '../pages/evidences/evidences';
 
 import { NewEvidenceComponent } from '../components/new-evidence/new-evidence';
 
@@ -27,6 +28,7 @@ import { HttpModule } from '@angular/http';
     PoliticiansPage,
     TabsPage,
     PoliticianPage,
+    EvidencesPage,
     NewEvidenceComponent,
     NewEvidencePage
   ],
@@ -43,6 +45,7 @@ import { HttpModule } from '@angular/http';
     PoliticiansPage,
     TabsPage,
     PoliticianPage,
+    EvidencesPage,
     NewEvidenceComponent,
     NewEvidencePage
   ],

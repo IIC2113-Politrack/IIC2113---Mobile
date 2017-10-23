@@ -24,8 +24,16 @@ page-proposals {
   .proposal-title {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
+    font-weight: 400;
+    font-size: 0.8em;
   }
+
+  .proposal-number {
+    font-weight: 300;
+    font-size: 0.7em;
+  }
+
 
 	ion-card {
     	padding: 0;
@@ -68,7 +76,6 @@ page-proposals {
       flex: 5;
       height: 2.1em;
       line-height: 2.1em;
-      margin-top: 0.2em;
       padding: 5px 1px 5px 1px;
     }
     
@@ -83,10 +90,13 @@ page-proposals {
       word-wrap: break-word;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4; /* number of lines to show */
-      line-height: 1em;        /* fallback */
-      max-height: 4.1em;       /* fallback */
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1.4em;        /* fallback */
+      max-height: 4.15em;       /* fallback */
       padding-bottom: 0.5em;
+      font-size: 0.7em;
+      font-weight: 300;
+
     }
 
     .tag {
