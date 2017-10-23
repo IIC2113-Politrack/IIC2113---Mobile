@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalController, ActionSheetController } from 'ionic-angular';
 import { NewEvidencePage } from '../../pages/new-evidence/new-evidence';
 
-import { Camera, CameraOptions } from '@ionic-native/camera';
+//import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
 @Component({
@@ -10,6 +10,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'new-evidence.html',
 })
 export class NewEvidenceComponent {
+
+  @Input() public politicianId;
+  @Input() public proposalId;
+
 
    constructor(public actionSheetCtrl: ActionSheetController,
                public modalCtrl: ModalController) {
@@ -43,7 +47,12 @@ export class NewEvidenceComponent {
   // }
 
   public goToNewEvidence(type) {
-    const modal = this.modalCtrl.create(NewEvidencePage, { type: type });
+    console.log(this.politicianId);
+    console.log(this.proposalId);
+    const modal = this.modalCtrl.create(NewEvidencePage,
+                                        { type: type,
+                                          politicianId: this.politicianId,
+                                          proposalId: this.proposalId});
     modal.present();
   }
 
