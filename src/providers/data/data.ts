@@ -36,9 +36,9 @@ export class DataProvider {
   	  .map(response => response.json())  	
   }
 
-  public getPolitician(id) {
+  public getPoliticians() {
     console.log("getting politicians");
-    return this._http.get(this.apiUrl + "politicians/" + id)
+    return this._http.get(this.apiUrl + "politicians")
       .map(response => response.json())
   }
 

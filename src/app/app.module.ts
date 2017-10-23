@@ -8,6 +8,7 @@ import { ProposalsPage } from '../pages/proposals/proposals';
 import { PoliticiansPage } from '../pages/politicians/politicians';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PoliticianPage } from '../pages/politician/politician';
+import { EvidencesPage } from '../pages/evidences/evidences';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { HttpModule } from '@angular/http';
     ProposalsPage,
     PoliticiansPage,
     TabsPage,
-    PoliticianPage
+    PoliticianPage,
+    EvidencesPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { HttpModule } from '@angular/http';
     ProposalsPage,
     PoliticiansPage,
     TabsPage,
-    PoliticianPage
+    PoliticianPage,
+    EvidencesPage
   ],
   providers: [
     StatusBar,

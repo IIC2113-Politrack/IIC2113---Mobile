@@ -7,14 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title class="politician-title">{{politician.name}}</ion-title>
+    <ion-title class="politician-title">{{politician.firstname}} {{politician.lastname}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
 	<div class="politician-info">
-		<img class="politician-pic" src={{politician.pic}}>
+		<img class="politician-pic" src={{pic}}>
 		<div class="politician-data">
 			<div class="data-title">
 				PARTIDO
@@ -78,7 +78,7 @@
 		</div>
 	</div>
 	<div class="politician-proposals" padding>
-		<ion-card *ngFor="let proposal of proposals">
+		<ion-card *ngFor="let proposal of proposals" (click)="goToProposalEvidences(proposal)">
 			<div class="proposal-row">
 				<div class="proposal-first-column">
 					<h3 class="proposal-title">{{proposal.title}}</h3>
