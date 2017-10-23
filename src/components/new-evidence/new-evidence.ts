@@ -15,32 +15,32 @@ export class NewEvidenceComponent {
                public modalCtrl: ModalController) {
   }
 
-  public presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: '¿Qué tipo de evidencia es?',
-      buttons: [
-        {
-          text: 'Imagen',
-          role: 'archive',
-          handler: () => {
-            this.goToNewEvidence('image')
-          }
-        },{
-          text: 'Archivo',
-          handler: () => {
-            this.goToNewEvidence('file')
-          }
-        },{
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
+  // public presentActionSheet() {
+  //   let actionSheet = this.actionSheetCtrl.create({
+  //     title: '¿Qué tipo de evidencia es?',
+  //     buttons: [
+  //       {
+  //         text: 'Imagen',
+  //         role: 'archive',
+  //         handler: () => {
+  //           this.goToNewEvidence('image')
+  //         }
+  //       },{
+  //         text: 'Archivo',
+  //         handler: () => {
+  //           this.goToNewEvidence('file')
+  //         }
+  //       },{
+  //         text: 'Cancelar',
+  //         role: 'cancel',
+  //         handler: () => {
+  //           console.log('Cancel clicked');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   actionSheet.present();
+  // }
 
   public goToNewEvidence(type) {
     const modal = this.modalCtrl.create(NewEvidencePage, { type: type });

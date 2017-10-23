@@ -25,9 +25,8 @@ export class NewEvidencePage {
 
   	this.type = navParams.get('type')
   	if (this.type == 'image') {
-  		this.presentCameraSheet();
+  		console.log(this.type);
   	}
-  	console.log(this.type);
   }
 
   public presentCameraSheet() {
@@ -49,9 +48,6 @@ export class NewEvidencePage {
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: () => {
-            this.close();
-          }
         }
       ]
     });

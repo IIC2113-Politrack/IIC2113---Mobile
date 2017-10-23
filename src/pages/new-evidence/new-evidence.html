@@ -14,8 +14,8 @@
 	<div [ngSwitch]="type">
 
 		<div *ngSwitchCase="'image'">
-			<div *ngIf="!data" class="upload-img-container2"></div>
-			<div *ngIf="data" class="upload-img-container">
+			<div (tap)="presentCameraSheet()" *ngIf="!data" class="upload-img-container2"></div>
+			<div (tap)="presentCameraSheet()" *ngIf="data" class="upload-img-container">
 				<img [src]="base64data">	
 			</div>
 
