@@ -12,18 +12,88 @@
 
 </ion-header>
 
-<ion-content class="card-background-page">
-
-	
-
-</ion-content>
-
-<!--
-<ion-content padding>
-	<p>Que genial la pagina de un politician</p>
-	<div (tap)="sumar()">
-		<p> suma 1!! </p>
+<ion-content>
+	<div class="politician-info">
+		<img class="politician-pic" src={{politician.pic}}>
+		<div class="politician-data">
+			<div class="data-title">
+				PARTIDO
+			</div>
+			<div class="data-content">
+				{{politician.party}}
+			</div>
+			<div class="data-title">
+				PACTO
+			</div>
+			<div class="data-content">
+				{{politician.pact}}
+			</div>
+			<div class="data-title">
+				CARGO AL QUE POSTULA
+			</div>
+			<div class="data-content">
+				{{politician.charge}}
+			</div>
+		</div>
 	</div>
-	<h3>{{numero}} </h3>
+	<div class="bio-container">
+		<div class="data-title">
+			RESEÑA BIOGRÁFICA
+		</div>
+		<div class="politician-bio" [class.extended]="extended">
+			{{politician.biography}}
+		</div>
+		<div class="extend-bio" (click)="toggle()">
+			{{toggle_text}}
+		</div>
+	</div>
+	<div class="dashboard-content">
+		<div class="horizontal-graph">
+			<div class="not-accomplished">
+			</div>
+			<div class="partially-accomplished" [style.width.%]="partially_accomplished">
+			</div>
+			<div class="accomplished" [style.width.%]="accomplished">
+			</div>
+		</div>
+		<div class="graph-info-container">
+			<div class="graph-info">
+				<div class="accomplished-circle"></div>
+				<div class="percentage">
+					{{accomplished}}%
+				</div>
+			</div>
+			<div class="graph-info">
+				<div class="partially-accomplished-circle"></div>
+				<div class="percentage">
+					{{partially_accomplished-accomplished}}%
+				</div>
+			</div>
+			<div class="graph-info">
+				<div class="not-accomplished-circle"></div>
+				<div class="percentage">
+					{{not_accomplished}}%
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="politician-proposals" padding>
+		<ion-card *ngFor="let proposal of proposals">
+		  <ion-item>
+		    <h3 class="proposal-title">{{proposal.title}}</h3>
+		    <p>Propuesta Nº {{proposal.num}} | </p>
+		    	<div class="apoyo">
+		        	<ion-icon name="hand"></ion-icon>
+					<div>{{proposal.upvotes}}</div>
+		      	</div>
+		  	
+		    <div class="tags">
+		      	<div class="tag" *ngFor="let tag of proposal.tags">
+		      		{{tag}}
+		      	</div>
+		    </div>
+		  </ion-item>
+		</ion-card>
+	</div>
+
 </ion-content>
--->

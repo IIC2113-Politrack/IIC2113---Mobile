@@ -1,39 +1,207 @@
 page-politician {
 
-	.politician-title {
-		background-color: map-get($colors, orangeBar);
+	.politician-pic {
+    background-position: center;
+    border-radius: 50%;
+    left: 1em;
+    top: 0.5em;
+    margin: 0.5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 30%;
+    flex: 4;
+    height: 30%;
+  }
 
-		.toolbar-title {
-			color: #f1f1f1;
-		}
-	}
+  .politician-info {
+    display: inline-flex;
+  }
 
-}
+  .politician-data {
+    flex: 6;
+    margin-top: 2.1em;
+  }
 
-.card-background-page {
+  .politician-bio {
+    height: 2.4em;
+    overflow-y: hidden;
+    font-size: 0.8em;
+    text-align: justify;
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 0.2em;
+    font-weight: 300;
+  }
+
+  .politician-bio.extended {
+    height: auto;
+  }
+
+  .extend-bio {
+    font-size: 0.8em;
+    margin-left: 1em;
+    margin-top: 0.3em;
+    color: map-get($colors, primary);
+  }
+
+  .data-title {
+    font-weight: 400;
+    font-size: 0.8em;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+
+  .data-content {
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-left: 1em;
+    margin-top: 0.1em;
+  }
+
+  .dashboard-content {
+    position: absolute;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .horizontal-graph {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 0.8em;
+    border-radius: 2px;
+    height: 6px;
+    background-color: map-get($colors, not-accomplished);
+  }
+
+  .not-accomplished {
+    background-color: map-get($colors, not-accomplished);
+    height: 6px;
+    border-radius: 2px;
+    position: absolute;
+  }
+
+  .partially-accomplished {
+    background-color: map-get($colors, partially-accomplished);
+    height: 6px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    position: absolute;
+  }
+
+  .accomplished {
+    background-color: map-get($colors, accomplished);
+    height: 6px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    position: absolute;
+  }
+
+  .bio-container {
+    margin-right: 0.7em;
+    margin-left: 0.7em;
+  }
+
+  .graph-info {
+    font-size: 0.8em;
+    margin-top: 0.7em;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    display: inline-block;
+  }
+
+  .accomplished-circle {
+    background-color: map-get($colors, accomplished);
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.3em;
+    margin: auto;
+  }
+
+  .partially-accomplished-circle {
+    background-color: map-get($colors, partially-accomplished);
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.3em;
+    margin: auto;
+  }
+
+  .not-accomplished-circle {
+    background-color: map-get($colors, not-accomplished);
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    margin-right: 0.3em;
+    margin: auto;
+  }
+
+  .graph-info-container {
+    display: flex;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  .politician-proposals {
+    width: 100%;
+    margin-top: inherit;
+  }
+  
+  .proposal-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   ion-card {
-    position: relative;
-    text-align: center;
-  }
+      padding: 0;
+      font-size: 1rem;
+      margin: 1px;
+      border-radius: 2px;
+      width: 100%;
+      font-size: 1.4rem;
+      background: #fff;
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.3);
+      box-shadow: 0 1px 2px rgba(0,0,0,.3);
 
-  .card-title {
-    position: absolute;
-    bottom: 0%;
-    font-size: 0.6em;
-    width: 100%;
-    color: #fff;
-    background-color: rgba(0,0,0,0.5);
-    padding: 1em;
-    font-weight: bold;
-  }
+    }
 
-  .card-subtitle {
-    font-size: 1.0em;
-    position: absolute;
-    top: 52%;
-    width: 100%;
-    color: #fff;
-  }
+    .propuesta {
+      border: 3px solid solid #233346;
+      min-height: 10px;
+      padding: 0;
+      border-radius: 3px;
+      background-color: white;
+    }
 
+    .tags {
+      display: inline-flex;
+      flex: 5;
+      height: 1.6em;
+      line-height: 2.1em;
+      margin-top: 0.2em;
+      padding: 5px 1px 5px 1px;
+    }
+    
+    .apoyo {
+      margin-left: 0;
+      line-height: 1em;
+
+    }
+
+    .tag {
+      border-radius: 3px;
+      border: solid 1px map-get($colors, orangeBar);
+      padding: 0px 2px 0px 2px;
+      color: map-get($colors, orangeBar);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 0.7em;
+      float: right;
+      margin-right: 4px;
+      right: 0;
+      position: static;
+    }
 }

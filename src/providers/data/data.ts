@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class DataProvider {
-  public apiUrl = 'http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/'
+  public apiUrl = 'http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/api/'
 
   constructor(private _http: Http) { }
 
@@ -34,6 +34,12 @@ export class DataProvider {
   	console.log("getting proposals");
   	return this._http.get(this.apiUrl + "proposals")
   	  .map(response => response.json())  	
+  }
+
+  public getPolitician(id) {
+    console.log("getting politicians");
+    return this._http.get(this.apiUrl + "politicians/" + id)
+      .map(response => response.json())
   }
 
 }

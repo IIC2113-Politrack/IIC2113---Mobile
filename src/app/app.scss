@@ -22,7 +22,16 @@ ion-navbar {
 		.toolbar-title {
 			color: #f1f1f1;
 		}
+
 	}
+}
+
+.bar-button {
+	color: #f1f1f1;
+}
+
+ion-header ion-icon.back-button-icon.icon {
+    color: #f1f1f1;
 }
 
 .card-ios {
