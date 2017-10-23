@@ -79,20 +79,22 @@
 	</div>
 	<div class="politician-proposals" padding>
 		<ion-card *ngFor="let proposal of proposals">
-		  <ion-item>
-		    <h3 class="proposal-title">{{proposal.title}}</h3>
-		    <p>Propuesta Nº {{proposal.num}} | </p>
-		    	<div class="apoyo">
-		        	<ion-icon name="hand"></ion-icon>
-					<div>{{proposal.upvotes}}</div>
-		      	</div>
-		  	
-		    <div class="tags">
-		      	<div class="tag" *ngFor="let tag of proposal.tags">
-		      		{{tag}}
-		      	</div>
-		    </div>
-		  </ion-item>
+			<div class="proposal-row">
+				<div class="proposal-first-column">
+					<h3 class="proposal-title">{{proposal.title}}</h3>
+				    <p class="proposal-numeric-info">Propuesta Nº {{proposal.num}} | <ion-icon name="hand"></ion-icon> {{proposal.upvotes}}</p>
+				    <div class="tags">
+				      	<div class="tag" *ngFor="let tag of proposal.tags">
+				      		{{tag}}
+				      	</div>
+				    </div>
+				</div>
+				<div class="proposal-second-column">
+					<div class="accomplished-big-circle"></div>
+					<div class="state">CUMPLIDO</div>
+				</div>
+			
+			</div>
 		</ion-card>
 	</div>
 

@@ -27,6 +27,7 @@ page-proposals {
     white-space: nowrap;
   }
 
+
 	ion-card {
     	padding: 0;
     	font-size: 1rem;
@@ -68,7 +69,6 @@ page-proposals {
       flex: 5;
       height: 2.1em;
       line-height: 2.1em;
-      margin-top: 0.2em;
       padding: 5px 1px 5px 1px;
     }
     
@@ -83,10 +83,13 @@ page-proposals {
       word-wrap: break-word;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4; /* number of lines to show */
-      line-height: 1em;        /* fallback */
-      max-height: 3.85em;       /* fallback */
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-height: 1.1em;        /* fallback */
+      max-height: 3.4em;       /* fallback */
       padding-bottom: 0.5em;
+      font-size: 0.8em;
+      font-weight: 400;
+
     }
 
     .tag {

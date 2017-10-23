@@ -31,7 +31,6 @@ export class PoliticianPage {
     }
     ]
   
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
 
 	this.politician = this.navParams.get('politician');

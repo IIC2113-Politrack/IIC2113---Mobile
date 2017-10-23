@@ -148,10 +148,54 @@ page-politician {
     margin-top: inherit;
   }
   
-  .proposal-title {
+  .proposal-first-column .proposal-title {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
+  .proposal-numeric-info {
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+
+  .proposal-row {
+    display: flex;
+  }
+
+  .proposal-first-column {
+    margin-left: 0.7em;
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+    margin-right: 0.2em;
+    flex: 15;
+  }
+
+  .proposal-second-column {
+    flex: 5;
+    border-left-color: rgba(0,0,0,0.1);
+    border-left-style: solid;
+    border-width: 1px;
+    text-align: center;
+    display: inline-block;
+    align: center;
+  }
+
+  .accomplished-big-circle {
+    background-color: map-get($colors, accomplished);
+    border-radius: 50%;
+    height: 12vw;
+    width: 12vw;
+    margin: auto;
+    margin-top: 1em;
+  }
+
+  .state {
+    font-size: 0.7em;
+    font-weight: 400;
+    margin-top: 0.5em;
   }
 
   ion-card {
@@ -204,4 +248,5 @@ page-politician {
       right: 0;
       position: static;
     }
+
 }
