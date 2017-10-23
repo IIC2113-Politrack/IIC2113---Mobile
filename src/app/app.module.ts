@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
+import { Keyboard } from '@ionic-native/keyboard';
 
 import { OrganizationsPage } from '../pages/organizations/organizations';
 import { ProposalsPage } from '../pages/proposals/proposals';
@@ -50,7 +51,8 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider,
-    Camera
+    Camera,
+    Keyboard
   ]
 })
 export class AppModule {}

@@ -26,7 +26,7 @@
 			</div>
 				
 			<ion-textarea [(ngModel)]="description" rows="1" id="messageInputBox" placeholder="Descripción"></ion-textarea>
-			<button class="action" ion-button color="orangeBar" (click)="send()">Sube tu evidencia!</button>
+			<button [disabled]="!data || !description" class="action" ion-button color="orangeBar" (click)="send()">Sube tu evidencia!</button>
 
 		</div>
 		<div *ngSwitchCase="'file'">

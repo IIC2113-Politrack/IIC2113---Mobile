@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, ViewController, NavParams, ActionSheetController, LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { DataProvider } from '../../providers/data/data';
 
@@ -16,17 +16,25 @@ export class NewEvidencePage {
   private proposalId = '59ed7257e7d0a62795cc5371';
   private data = null;
   private base64data;
+  public loading = false;
+  public spinner;
 
   constructor(public navParams: NavParams,
   			  private camera: Camera,
   			  public actionSheetCtrl: ActionSheetController,
   			  public viewCtrl: ViewController,
-          private _api: DataProvider) {
+          private _api: DataProvider,
+          private loadingCtrl: LoadingController) {
 
   	this.type = navParams.get('type')
   	if (this.type == 'image') {
   		console.log(this.type);
   	}
+
+    this.spinner = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Subiendo evidencia...'
+    });
   }
 
   public presentCameraSheet() {
@@ -80,6 +88,7 @@ export class NewEvidencePage {
 
   public send() {
     console.log("enviando fotoooooo")
+    this.spinner.present();
     this._api.uploadEvidence(this.politicianId,
                              this.proposalId,
                              this.description,
@@ -91,9 +100,11 @@ export class NewEvidencePage {
         alert("Evidencia subida exitosamente!");
       }, (err) => {
         console.log(err);
+      }, () => {
+        this.spinner.dismiss();
+        this.close();
       })
   }
-
 
 
 }
