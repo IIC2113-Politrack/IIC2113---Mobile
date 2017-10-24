@@ -26,7 +26,7 @@
 				PACTO
 			</div>
 			<div class="data-content">
-				{{politician.pact}}
+				{{pact}}
 			</div>
 			<div class="data-title">
 				CARGO AL QUE POSTULA
@@ -82,16 +82,19 @@
 			<div class="proposal-row">
 				<div class="proposal-first-column">
 					<h3 class="proposal-title">{{proposal.title}}</h3>
-				    <p class="proposal-numeric-info">Propuesta Nº {{proposal.num}} | <ion-icon name="hand"></ion-icon> {{proposal.upvotes}}</p>
+				    <p class="proposal-numeric-info">Propuesta Nº {{proposal['id']}} | <ion-icon name="hand"></ion-icon> {{proposal.nro_supports}}</p>
 				    <div class="tags">
-				      	<div class="tag" *ngFor="let tag of proposal.tags">
+<!-- 				      	<div class="tag" *ngFor="let tag of proposal.tags">
 				      		{{tag}}
+				      	</div> -->
+				      	<div class="tag">
+				      		{{proposal.clasification}}
 				      	</div>
 				    </div>
 				</div>
 				<div class="proposal-second-column">
-					<div class="accomplished-big-circle"></div>
-					<div class="state">CUMPLIDO</div>
+					<div class="not-accomplished-big-circle"></div>
+					<div class="state">NO CUMPLIDO</div>
 				</div>
 			
 			</div>

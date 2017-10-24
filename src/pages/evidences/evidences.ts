@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { DataProvider } from '../../providers/data/data';
 
 @IonicPage()
 @Component({
@@ -12,13 +12,20 @@ export class EvidencesPage {
   politician;
   evidences;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
   	this.proposal = this.navParams.get('proposal');
-    this.evidences = this.proposal.evidences;
     this.politician = this.navParams.get('politician');
-    console.log(this.politician);
+    this.evidences = this.politician.proposals[this.proposal._id].evidences;
+    
+    //console.log(this.politician);
     console.log(this.evidences);
-    console.log(this.proposal);
+    //console.log(this.proposal);
+
+    // this._api.getEvidence(this.evidences[_id]).subscribe((response) => {
+    //     this.evidences.push(response);
+    //   }, (err) => {
+    //     console.log(err);
+    //   })
   }
 
   ionViewDidLoad() {

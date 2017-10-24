@@ -18,7 +18,7 @@
   		<ion-row>
     		<ion-col col-6 *ngFor="let politician of politicians">
     			<ion-card>
-							<img type="submit" (click)= "openPage(politician, pics[politician['lastname']])" [src]="pics[politician['lastname']]"/>
+							<img type="submit" (click)= "openPage(politician, pics[politician['lastname']], pacts[politician['lastname']])" [src]="pics[politician['lastname']]"/>
 	    			<div class="card-title">{{politician.firstname}} {{politician.lastname}}</div>
 				</ion-card>
     		</ion-col>

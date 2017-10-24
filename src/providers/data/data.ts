@@ -30,10 +30,22 @@ export class DataProvider {
   	  .map(response => response.json())
   }
 
+  public getEvidence(id) {
+    console.log("getting evidence");
+    return this._http.get(this.apiUrl + "evidence/" + id)
+      .map(response => response.json())
+  }
+
   public getProposals() {
   	console.log("getting proposals");
   	return this._http.get(this.apiUrl + "proposals")
   	  .map(response => response.json())  	
+  }
+
+  public getProposal(id) {
+    console.log("getting proposal");
+    return this._http.get(this.apiUrl + "proposals/" + id)
+      .map(response => response.json())    
   }
 
   public getPoliticians() {

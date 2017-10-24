@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EvidencesPage } from '../evidences/evidences';
-
+import { DataProvider } from '../../providers/data/data';
 
 @IonicPage()
 @Component({
@@ -18,33 +18,32 @@ export class PoliticianPage {
   public partially_accomplished = 48;
   public not_accomplished = 100-this.partially_accomplished;
   public not_accomplished_width = 100;
-  pic;
+  public pic;
+  public pact;
 
-  public proposals;
-  // [
-  //   {
-  //     title: "Política Pública de Salud Mental Coordinada para la prevención del suicidio infantil y adolescente",
-  //     num: 175,
-  //     org:"Fundación Todo Mejora",
-  //     org_pic:"https://votainteligente.cl/cache/cache/d4/e8/d4e8b67e3e9c184a1b21e120500b7ecb.png",
-  //     content: "Articular los esfuerzos realizados desde el área de la salud con aquellos emanados desde el sistema escolar a fin de que las acciones tengan repercusiones para el % de los casos de NNA que no presentan depresión, pero si riesgo suicida.",
-  //     tags: ["INFANCIA Y JUVENTUD", "SALUD"],
-  //     upvotes: 12
-  //   }
-  //   ]
+  public proposals =[];
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
 
 	this.politician = this.navParams.get('politician');
-  this.proposals = this.politician.proposals;
   this.pic = this.navParams.get('pic');
+  this.pact = this.navParams.get('pact');
 
   console.log(this.politician);
+
+  for (let proposal in this.politician.proposals) {
+    this._api.getProposal(this.politician.proposals[proposal].proposal).subscribe((response) => {
+      this.proposals.push(response);
+    }, (err) => {
+      console.log(err);
+    })
+  }
 
   }
 
   ionViewDidLoad() {
 	console.log('ionViewDidLoad PoliticianPage');
+  console.log(this.proposals)
   }
 
   public toggle() {
