@@ -19,27 +19,29 @@
 
 	  <ion-item>
 	    <ion-avatar item-start>
-	      <img src={{proposal.org_pic}}/>
+	      <!--<img src={{proposal.org_pic}}/>-->
+	      <img src="https://votainteligente.cl/cache/cache/b9/c4/b9c497f8669384dc5523f0db25095358.png"/>
 	    </ion-avatar>
 	    <h3 class="proposal-title">{{proposal.title}}</h3>
-	    <p>Propuesta Nº {{proposal.num}}</p>
+	    <p class="proposal-number">Propuesta Nº {{proposal['id']}}</p>
 	  </ion-item>
 
 	  <ion-card-content class="proposal-content">
-	    <p>{{proposal.content}}</p>
+	    <p>{{ proposal['data']['solution_at_the_end'] }}</p>
 	  </ion-card-content>
 
 	  <ion-row>
 	    <ion-col style="display: inline-flex;">
 	      <button ion-button color="primary" clear small icon-start class="apoyo">
 	        <ion-icon name="hand"></ion-icon>
-	        <div (tap)="sumar()">
-						<div>{{numero}}</div>
-					</div>
+				<div>{{proposal.nro_supports}}</div>
 	      </button>
 		      <div class="tags">
-		      	<div class="tag" *ngFor="let tag of proposal.tags">
+<!-- 		      	<div class="tag" *ngFor="let tag of proposal.tags">
 		      		{{tag}}
+		      	</div> -->
+		      	<div class="tag">
+		      		{{proposal.clasification}}
 		      	</div>
 		      </div>
 

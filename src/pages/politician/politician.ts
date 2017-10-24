@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { EvidencesPage } from '../evidences/evidences';
+import { DataProvider } from '../../providers/data/data';
 
 @IonicPage()
 @Component({
@@ -9,53 +10,50 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PoliticianPage {
 
-  public name = "Políticos";
-  public numero = 0;
+  public name = "";
+  public politician : any;
+  public extended = false;
+  public toggle_text = "Ver más";
+  public accomplished = 26;
+  public partially_accomplished = 48;
+  public not_accomplished = 100-this.partially_accomplished;
+  public not_accomplished_width = 100;
+  public pic;
+  public pact;
 
-  public politicians = [
-  	{
-  		name:"Eduardo Artés",
-  		pic:"https://votainteligente.cl/cache/cache/88/98/889830521b08316e7ebeb6a44d81c375.jpg"
-  	},
-  	{
-  		name:"Marco Enriquez-Ominami",
-  		pic:"https://votainteligente.cl/cache/cache/0a/50/0a501fe7f9d78e935224e09853943289.jpg"
-  	},
-  	{
-  		name:"Carolina Goic",
-  		pic:"https://votainteligente.cl/cache/cache/f2/07/f207c9b4c462feb36625b3171849195f.jpg"
-  	},
-  	{
-  		name:"Alejandro Guiller",
-  		pic:"https://votainteligente.cl/cache/cache/b1/48/b1489a87ae59827cdeec0c9a35908fc1.jpg"
-  	},
-  	{
-  		name:"José Antonio Kast",
-  		pic:"https://votainteligente.cl/cache/cache/2a/b7/2ab7467eea2f702a4ebce4944a4ff40b.jpg"
-  	},
-  	{
-  		name:"Alejandro Navarro",
-  		pic:"https://votainteligente.cl/cache/cache/67/5b/675b495b7a214dbc81cce2905139f52f.jpg"
-  	},
-  	{
-  		name:"Sebastián Piñera",
-  		pic:"https://votainteligente.cl/cache/cache/61/29/61298ed0dea2ed20ea9a6fde7127ce84.jpg"
-  	},
-  	{
-  		name:"Beatriz Sánchez",
-  		pic:"https://pbs.twimg.com/profile_images/872498316004782082/0QUZvqbu.jpg"
-  	}
-  ]
+  public proposals = [];
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.politician = this.navParams.get('politician');
+    this.pic = this.navParams.get('pic');
+    this.pact = this.navParams.get('pact');
+
+    for (let proposal in this.politician.proposals) {
+      this._api.getProposal(this.politician.proposals[proposal].proposal).subscribe((response) => {
+        this.proposals.push(response);
+      }, (err) => {
+        console.log(err);
+      })
+    }
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PoliticianPage');
+	  console.log('ionViewDidLoad PoliticianPage');
   }
 
-  public sumar() {
-  	this.numero = this.numero + 1;
+  public toggle() {
+    this.extended = !this.extended;
+    if (this.extended == true) {
+      this.toggle_text = "Ver menos";
+    } else {
+      this.toggle_text = "Ver más";
+    }
+  }
+
+  public goToProposalEvidences(proposal) {
+    this.navCtrl.push(EvidencesPage, {proposal: proposal, politician: this.politician});
   }
 
 }

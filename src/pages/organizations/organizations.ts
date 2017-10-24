@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the OrganizationsPage page.
@@ -14,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'organizations.html',
 })
 export class OrganizationsPage {
+
+  // public organizations;
 
 	public organizations = [
   	{
@@ -95,14 +98,16 @@ export class OrganizationsPage {
   	{
   		name:"Fundación Iguales",
   		pic:"https://votainteligente.cl/cache/cache/f7/03/f703f89e25a4cd2e9999f00c80d98b08.png"
-  	},
-  	{
-  		name:"",
-  		pic:""
   	}
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
+
+    this._api.getOrganizations().subscribe((response) => {
+      console.log(response);
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   ionViewDidLoad() {

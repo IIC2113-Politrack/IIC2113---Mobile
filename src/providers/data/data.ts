@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class DataProvider {
-  public apiUrl = 'http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/'
+  public apiUrl = 'http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/api/'
 
   constructor(private _http: Http) { }
 
@@ -30,10 +30,45 @@ export class DataProvider {
   	  .map(response => response.json())
   }
 
+  public getEvidence(id) {
+    console.log("getting evidence");
+    return this._http.get(this.apiUrl + "evidence/" + id)
+      .map(response => response.json())
+  }
+
   public getProposals() {
   	console.log("getting proposals");
   	return this._http.get(this.apiUrl + "proposals")
   	  .map(response => response.json())  	
+  }
+
+  public getProposal(id) {
+    console.log("getting proposal");
+    return this._http.get(this.apiUrl + "proposals/" + id)
+      .map(response => response.json())    
+  }
+
+  public getPoliticians() {
+    console.log("getting politicians");
+    return this._http.get(this.apiUrl + "politicians")
+      .map(response => response.json())
+  }
+
+  public uploadEvidence(politicianId, proposalId, description, format, content, isGood) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers, method: "post" });
+    let body = {
+      politicianId: politicianId,
+      proposalId: proposalId,
+      data: {
+        description: description,
+        format: format,
+        data: content,
+        isGood: isGood        
+      }
+    }
+    return this._http.post(this.apiUrl + "evidences", body, options)
   }
 
 }
