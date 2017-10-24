@@ -183,13 +183,13 @@ page-politician {
     align: center;
   }
 
-  .accomplished-big-circle {
-    background-color: map-get($colors, accomplished);
+  .not-accomplished-big-circle {
+    background-color: map-get($colors, not-accomplished);
     border-radius: 50%;
     height: 12vw;
     width: 12vw;
     margin: auto;
-    margin-top: 1em;
+    margin-top: 0.7em;
   }
 
   .state {
