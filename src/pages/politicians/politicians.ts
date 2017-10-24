@@ -45,7 +45,6 @@ export class PoliticiansPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
       this._api.getPoliticians().subscribe((response) => {
-      //console.log(response);
       this.politicians = response;
     }, (err) => {
       console.log(err);

@@ -3,7 +3,7 @@
     <name>PoliTrap</name>
     <description>Es hora de exigir a los políticos!.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.0.107:8101" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -79,6 +79,7 @@
     </platform>
     <allow-navigation href="http://192.168.0.106:8101" />
     <allow-navigation href="http://192.168.0.107:8101" />
+    <allow-navigation href="http://192.168.0.107:8102" />
     <engine name="browser" spec="^4.1.0" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />

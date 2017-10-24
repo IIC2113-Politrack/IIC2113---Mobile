@@ -68,7 +68,7 @@ export class DataProvider {
         isGood: isGood        
       }
     }
-    return this._http.post(this.apiUrl + "api/evidences", body, options)
+    return this._http.post(this.apiUrl + "evidences", body, options)
   }
 
 }

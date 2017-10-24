@@ -29,8 +29,6 @@ export class PoliticianPage {
   this.pic = this.navParams.get('pic');
   this.pact = this.navParams.get('pact');
 
-  console.log(this.politician);
-
   for (let proposal in this.politician.proposals) {
     this._api.getProposal(this.politician.proposals[proposal].proposal).subscribe((response) => {
       this.proposals.push(response);

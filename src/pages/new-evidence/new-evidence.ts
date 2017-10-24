@@ -12,8 +12,8 @@ export class NewEvidencePage {
 	public type;
 	isGood = false;
   private description;
-  private politicianId = '59ed74cdb96d3829e3bb4ddb';
-  private proposalId = '59ed7257e7d0a62795cc5371';
+  private politicianId;
+  private proposalId;
   private data = null;
   private base64data;
   public loading = false;
@@ -26,7 +26,9 @@ export class NewEvidencePage {
           private _api: DataProvider,
           private loadingCtrl: LoadingController) {
 
-  	this.type = navParams.get('type')
+  	this.type = navParams.get('type');
+    this.politicianId = navParams.get('politicianId');
+    this.proposalId = navParams.get('proposalId');
   	if (this.type == 'image') {
   		console.log(this.type);
   	}
@@ -97,12 +99,13 @@ export class NewEvidencePage {
                              this.isGood)
       .subscribe((response) => {
         console.log(response);
+        this.spinner.dismiss();
         alert("Evidencia subida exitosamente!");
+        this.close();
       }, (err) => {
         console.log(err);
-      }, () => {
+        alert("error subiendo evidencia");
         this.spinner.dismiss();
-        this.close();
       })
   }
 
