@@ -69,7 +69,8 @@ export class NewEvidencePage {
       sourceType: destinationType,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true
     }
     this.camera.getPicture(options).then((imageData) => {
      this.base64data = 'data:image/jpeg;base64,' + imageData;

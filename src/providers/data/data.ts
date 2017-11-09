@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class DataProvider {
-  public apiUrl = 'http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/api/'
+  public apiUrl = 'https://politrap-api.herokuapp.com/api/'
 
   constructor(private _http: Http) { }
 
@@ -32,7 +32,7 @@ export class DataProvider {
 
   public getEvidence(id) {
     console.log("getting evidence");
-    return this._http.get(this.apiUrl + "evidence/" + id)
+    return this._http.get(this.apiUrl + "evidences/" + id)
       .map(response => response.json())
   }
 
