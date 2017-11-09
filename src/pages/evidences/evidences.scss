@@ -1,3 +1,63 @@
 page-evidences {
+	.politician-proposal-evidences {
+    	width: 100%;
+  	}
 
+  	.evidence-row {
+    	margin: 0.7em;
+  	}
+
+  	.evidence-title {
+  		overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: normal;
+    	font-weight: 400;
+  	}
+
+  	.img-container {
+		position: relative;
+		width: 80vw;
+		height: 65vw;
+		margin-left: 3vw;
+		margin-right: 3vw;
+		img {
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    max-height: 100%;
+		}
+	}
+
+	.evidence-caracter {
+	    font-size: 0.8em;
+	    font-weight: 400;
+	}
+
+	.evidence-caracter-container {
+	    font-size: 0.8em;
+	    margin-top: 0.7em;
+	    position: relative;
+	    display: inline-flex;
+	}
+
+	.accomplished-circle {
+	    background-color: map-get($colors, accomplished);
+	    border-radius: 50%;
+	    height: 1em;
+	    width: 1em;
+	    margin-right: 0.6em;
+	    margin: auto;
+	}
+
+  	.not-accomplished-circle {
+	    background-color: map-get($colors, not-accomplished);
+	    border-radius: 50%;
+	    height: 1em;
+	    width: 1em;
+	    margin-right: 0.6em;
+	    margin: auto;
+	}
 }
