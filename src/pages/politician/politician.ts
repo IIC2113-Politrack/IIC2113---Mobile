@@ -21,26 +21,20 @@ export class PoliticianPage {
   public pic;
   public pact;
 
-  public proposals = [];
+  public commitments;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
 
   	this.politician = this.navParams.get('politician');
     this.pic = this.navParams.get('pic');
     this.pact = this.navParams.get('pact');
+    this._api.getPoliticianProposal(this.politician._id).subscribe((response) => {
+      console.log(response)
+      this.commitments = response;
+    }, (err) => {
+      console.log(err);
+    })
 
-    for (let proposal in this.politician.proposals) {
-      this._api.getProposal(this.politician.proposals[proposal].proposal).subscribe((response) => {
-        this.proposals.push(response);
-      }, (err) => {
-        console.log(err);
-      })
-    }
-
-  }
-
-  ionViewDidLoad() {
-	  console.log('ionViewDidLoad PoliticianPage');
   }
 
   public toggle() {
@@ -52,8 +46,8 @@ export class PoliticianPage {
     }
   }
 
-  public goToProposalEvidences(proposal) {
-    this.navCtrl.push(EvidencesPage, {proposal: proposal, politician: this.politician});
+  public goToProposalEvidences(commitment) {
+    this.navCtrl.push(EvidencesPage, {commitment: commitment, politician: this.politician});
   }
 
 }

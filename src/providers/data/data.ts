@@ -9,31 +9,16 @@ export class DataProvider {
 
   constructor(private _http: Http) { }
 
-  public getUsers() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-  	console.log("getting users");
-    let options = new RequestOptions({ headers: headers, method: "get" });
-    return this._http.get(this.apiUrl +  "users", options)
-      .map(response => response.json());
-  }
-
   public getOrganizations() {
   	console.log("getting organizations");
   	return this._http.get(this.apiUrl + "organizations")
       .map(response => response.json())
   }
 
-  public getEvidences() {
+  public getCommitmentEvidences(commitmentId) {
   	console.log("getting evidences");
-  	return this._http.get(this.apiUrl + "evidences")
+  	return this._http.get(this.apiUrl + `/api/commitments/${commitmentId}/evidences`)
   	  .map(response => response.json())
-  }
-
-  public getEvidence(id) {
-    console.log("getting evidence");
-    return this._http.get(this.apiUrl + "evidences/" + id)
-      .map(response => response.json())
   }
 
   public getProposals() {
@@ -42,10 +27,10 @@ export class DataProvider {
   	  .map(response => response.json())  	
   }
 
-  public getProposal(id) {
-    console.log("getting proposal");
-    return this._http.get(this.apiUrl + "proposals/" + id)
-      .map(response => response.json())    
+  public getPoliticianProposal(politicianId) {
+    console.log("getting politician proposals");
+    return this._http.get(this.apiUrl + `politicians/${politicianId}/commitments`)
+      .map(response => response.json())
   }
 
   public getPoliticians() {
