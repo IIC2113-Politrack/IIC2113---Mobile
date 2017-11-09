@@ -21,7 +21,7 @@ export class PoliticianPage {
   public pic;
   public pact;
 
-  public commitments;
+  public commitments =[];
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private _api: DataProvider) {
 

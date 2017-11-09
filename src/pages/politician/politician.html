@@ -53,58 +53,66 @@
 			{{toggle_text}}
 		</div>
 	</div>
-	<div class="dashboard-content">
-		<div class="horizontal-graph">
-			<div class="not-accomplished">
+	<div *ngIf="commitments && commitments.length > 0">
+		<div class="dashboard-content">
+			<div class="horizontal-graph">
+				<div class="not-accomplished">
+				</div>
+				<div class="partially-accomplished" [style.width.%]="partially_accomplished">
+				</div>
+				<div class="accomplished" [style.width.%]="accomplished">
+				</div>
 			</div>
-			<div class="partially-accomplished" [style.width.%]="partially_accomplished">
-			</div>
-			<div class="accomplished" [style.width.%]="accomplished">
+			<div class="graph-info-container">
+				<div class="graph-info">
+					<div class="accomplished-circle"></div>
+					<div class="percentage">
+						{{accomplished}}%
+					</div>
+				</div>
+				<div class="graph-info">
+					<div class="partially-accomplished-circle"></div>
+					<div class="percentage">
+						{{partially_accomplished-accomplished}}%
+					</div>
+				</div>
+				<div class="graph-info">
+					<div class="not-accomplished-circle"></div>
+					<div class="percentage">
+						{{not_accomplished}}%
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="graph-info-container">
-			<div class="graph-info">
-				<div class="accomplished-circle"></div>
-				<div class="percentage">
-					{{accomplished}}%
+		<div class="politician-proposals" padding>
+			<ion-card *ngFor="let commitment of commitments" (click)="goToProposalEvidences(commitment)">
+				<div class="proposal-row">
+					<div class="proposal-first-column">
+						<h3 class="proposal-title">{{commitment.proposal.title}}</h3>
+					    <p class="proposal-numeric-info">Propuesta Nº {{commitment.proposal['id']}} | <ion-icon name="hand"></ion-icon> {{commitment.proposal.nro_supports}}</p>
+					    <div class="tags">
+	<!-- 				      	<div class="tag" *ngFor="let tag of proposal.tags">
+					      		{{tag}}
+					      	</div> -->
+					      	<div class="tag">
+					      		{{commitment.proposal.clasification}}
+					      	</div>
+					    </div>
+					</div>
+					<div class="proposal-second-column">
+						<div class="not-accomplished-big-circle"></div>
+						<div class="state">NO CUMPLIDO</div>
+					</div>
+				
 				</div>
-			</div>
-			<div class="graph-info">
-				<div class="partially-accomplished-circle"></div>
-				<div class="percentage">
-					{{partially_accomplished-accomplished}}%
-				</div>
-			</div>
-			<div class="graph-info">
-				<div class="not-accomplished-circle"></div>
-				<div class="percentage">
-					{{not_accomplished}}%
-				</div>
-			</div>
+			</ion-card>
 		</div>
 	</div>
-	<div class="politician-proposals" padding>
-		<ion-card *ngFor="let commitment of commitments" (click)="goToProposalEvidences(commitment)">
-			<div class="proposal-row">
-				<div class="proposal-first-column">
-					<h3 class="proposal-title">{{commitment.proposal.title}}</h3>
-				    <p class="proposal-numeric-info">Propuesta Nº {{commitment.proposal['id']}} | <ion-icon name="hand"></ion-icon> {{commitment.proposal.nro_supports}}</p>
-				    <div class="tags">
-<!-- 				      	<div class="tag" *ngFor="let tag of proposal.tags">
-				      		{{tag}}
-				      	</div> -->
-				      	<div class="tag">
-				      		{{commitment.proposal.clasification}}
-				      	</div>
-				    </div>
-				</div>
-				<div class="proposal-second-column">
-					<div class="not-accomplished-big-circle"></div>
-					<div class="state">NO CUMPLIDO</div>
-				</div>
-			
-			</div>
-		</ion-card>
+	<div *ngIf="!(commitments.length > 0)" padding>
+		<ion-icon name="ios-alert-outline"></ion-icon>
+
+		{{politician.firstname}} {{politician.lastname}} no se ha comprometido con ninguna causa
+		
 	</div>
 
 </ion-content>
