@@ -17,7 +17,6 @@ export class EvidencesPage {
     this.politician = this.navParams.get('politician');
     this._api.getCommitmentEvidences(this.commitment._id).subscribe((response) => {
       this.evidences = response;
-      console.log(this.evidences);
     }, (err) => {
       console.log(err);
     })
