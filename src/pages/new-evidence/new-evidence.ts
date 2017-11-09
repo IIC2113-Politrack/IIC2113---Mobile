@@ -41,7 +41,7 @@ export class NewEvidencePage {
 
   public presentCameraSheet() {
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Elige origen de la imágen',
+      title: 'Elige origen de la imagen',
       buttons: [
         {
           text: 'Elegir de la biblioteca',
