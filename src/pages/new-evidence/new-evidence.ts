@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController, NavParams, ActionSheetController, LoadingController } from 'ionic-angular';
+import { IonicPage, ViewController, NavParams, ActionSheetController, LoadingController, NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { DataProvider } from '../../providers/data/data';
 
@@ -23,7 +23,8 @@ export class NewEvidencePage {
   			  public actionSheetCtrl: ActionSheetController,
   			  public viewCtrl: ViewController,
           private _api: DataProvider,
-          private loadingCtrl: LoadingController) {
+          private loadingCtrl: LoadingController,
+          private navCtrl: NavController) {
 
   	this.type = navParams.get('type');
     this.commitmentId = navParams.get('commitmentId');
@@ -100,6 +101,7 @@ export class NewEvidencePage {
         console.log(response);
         this.spinner.dismiss();
         alert("Evidencia subida exitosamente!");
+        this.navCtrl.pop();
         this.close();
       }, (err) => {
         console.log(err);
