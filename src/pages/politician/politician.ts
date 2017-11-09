@@ -29,7 +29,6 @@ export class PoliticianPage {
     this.pic = this.navParams.get('pic');
     this.pact = this.navParams.get('pact');
     this._api.getPoliticianProposal(this.politician._id).subscribe((response) => {
-      console.log(response)
       this.commitments = response;
     }, (err) => {
       console.log(err);

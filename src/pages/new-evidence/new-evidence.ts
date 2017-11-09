@@ -90,7 +90,6 @@ export class NewEvidencePage {
   }
 
   public send() {
-    console.log("enviando fotoooooo")
     this.spinner.present();
     this._api.uploadEvidence(this.commitmentId,
                              this.description,

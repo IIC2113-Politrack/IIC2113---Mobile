@@ -10,31 +10,26 @@ export class DataProvider {
   constructor(private _http: Http) { }
 
   public getOrganizations() {
-  	console.log("getting organizations");
   	return this._http.get(this.apiUrl + "organizations")
       .map(response => response.json())
   }
 
   public getCommitmentEvidences(commitmentId) {
-  	console.log("getting evidences");
   	return this._http.get(this.apiUrl + `commitments/${commitmentId}/evidences`)
   	  .map(response => response.json())
   }
 
   public getProposals() {
-  	console.log("getting proposals");
   	return this._http.get(this.apiUrl + "proposals")
   	  .map(response => response.json())  	
   }
 
   public getPoliticianProposal(politicianId) {
-    console.log("getting politician proposals");
     return this._http.get(this.apiUrl + `politicians/${politicianId}/commitments`)
       .map(response => response.json())
   }
 
   public getPoliticians() {
-    console.log("getting politicians");
     return this._http.get(this.apiUrl + "politicians")
       .map(response => response.json())
   }
