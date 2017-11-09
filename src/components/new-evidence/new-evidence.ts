@@ -11,8 +11,7 @@ import { NewEvidencePage } from '../../pages/new-evidence/new-evidence';
 })
 export class NewEvidenceComponent {
 
-  @Input() public politicianId;
-  @Input() public proposalId;
+  @Input() public commitmentId;
 
 
    constructor(public actionSheetCtrl: ActionSheetController,
@@ -47,12 +46,9 @@ export class NewEvidenceComponent {
   // }
 
   public goToNewEvidence(type) {
-    console.log(this.politicianId);
-    console.log(this.proposalId);
     const modal = this.modalCtrl.create(NewEvidencePage,
                                         { type: type,
-                                          politicianId: this.politicianId,
-                                          proposalId: this.proposalId});
+                                          commitmentId: this.commitmentId});
     modal.present();
   }
 

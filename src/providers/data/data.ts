@@ -17,7 +17,7 @@ export class DataProvider {
 
   public getCommitmentEvidences(commitmentId) {
   	console.log("getting evidences");
-  	return this._http.get(this.apiUrl + `/api/commitments/${commitmentId}/evidences`)
+  	return this._http.get(this.apiUrl + `commitments/${commitmentId}/evidences`)
   	  .map(response => response.json())
   }
 
@@ -39,21 +39,17 @@ export class DataProvider {
       .map(response => response.json())
   }
 
-  public uploadEvidence(politicianId, proposalId, description, format, content, isGood) {
+  public uploadEvidence(commitmentId, description, format, content, isGood) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions({ headers: headers, method: "post" });
     let body = {
-      politicianId: politicianId,
-      proposalId: proposalId,
-      data: {
         description: description,
         format: format,
         data: content,
-        isGood: isGood        
-      }
+        isGood: isGood
     }
-    return this._http.post(this.apiUrl + "evidences", body, options)
+    return this._http.post(this.apiUrl + `commitments/${commitmentId}/evidences`, body, options)
   }
 
 }

@@ -14,10 +14,10 @@
 
 
 <ion-content>
-	<div class="evidences" *ngFor="let evidence of evidences_id">
+	<div class="evidences" *ngFor="let evidence of evidences">
 		{{evidence}}
 	</div>
 
-	<new-evidence [politicianId]="politician._id" [proposalId]="proposal.proposal" ></new-evidence>
+	<new-evidence [commitmentId]="commitment._id" ></new-evidence>
 
 </ion-content>

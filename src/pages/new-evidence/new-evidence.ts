@@ -12,8 +12,7 @@ export class NewEvidencePage {
 	public type;
 	isGood = false;
   private description;
-  private politicianId;
-  private proposalId;
+  private commitmentId;
   private data = null;
   private base64data;
   public loading = false;
@@ -27,11 +26,12 @@ export class NewEvidencePage {
           private loadingCtrl: LoadingController) {
 
   	this.type = navParams.get('type');
-    this.politicianId = navParams.get('politicianId');
-    this.proposalId = navParams.get('proposalId');
+    this.commitmentId = navParams.get('commitmentId');
   	if (this.type == 'image') {
   		console.log(this.type);
   	}
+
+    console.log(this.commitmentId);
 
     this.spinner = this.loadingCtrl.create({
       spinner: 'crescent',
@@ -92,8 +92,7 @@ export class NewEvidencePage {
   public send() {
     console.log("enviando fotoooooo")
     this.spinner.present();
-    this._api.uploadEvidence(this.politicianId,
-                             this.proposalId,
+    this._api.uploadEvidence(this.commitmentId,
                              this.description,
                              this.type,
                              this.data,
