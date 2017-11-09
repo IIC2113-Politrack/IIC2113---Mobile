@@ -6,11 +6,32 @@
 
 </ion-header>
 
-
 <ion-content>
-	<div class="evidences" *ngFor="let evidence of evidences">
-		{{evidence}}
-	</div>
+  <div class="politician-proposal-evidences" padding>
+    <ion-card *ngFor="let evidence of evidences">
+      <div class="evidence-row">
+          <h3 class="evidence-title">{{evidence.description}}</h3>
+          <div class="evidence-caracter-container" *ngIf="evidence.isGood">
+            <div class="accomplished-circle"></div>
+            <div>
+              Evidencia a favor
+            </div>
+          </div>
+
+          <div class="evidence-caracter-container" *ngIf="!evidence.isGood">
+            <div class="not-accomplished-circle"></div>
+            <div>
+              Evidencia en contra
+            </div>
+          </div>
+
+          <div class ="img-container">
+            <img [src]="'data:image/jpeg;base64,'+ evidence.data" >
+          </div>
+      </div>
+    </ion-card>
+  </div>
+
 
 	<new-evidence [commitmentId]="commitment._id" ></new-evidence>
 
