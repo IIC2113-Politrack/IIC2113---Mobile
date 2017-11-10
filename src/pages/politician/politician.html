@@ -49,7 +49,7 @@
 		<div class="politician-bio" [class.extended]="extended">
 			{{politician.biography}}
 		</div>
-		<div class="extend-bio" (click)="toggle()">
+		<div class="extend-bio" (tap)="toggle()">
 			{{toggle_text}}
 		</div>
 	</div>
@@ -85,7 +85,7 @@
 			</div>
 		</div>
 		<div class="politician-proposals" padding>
-			<ion-card *ngFor="let commitment of commitments" (click)="goToProposalEvidences(commitment)">
+			<ion-card *ngFor="let commitment of commitments" (tap)="goToProposalEvidences(commitment)">
 				<div class="proposal-row">
 					<div class="proposal-first-column">
 						<h3 class="proposal-title">{{commitment.proposal.title}}</h3>
