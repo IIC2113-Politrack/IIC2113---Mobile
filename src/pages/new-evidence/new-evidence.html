@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-  	<ion-icon class="close" name="ios-close" (click)="close()"></ion-icon>
+  	<ion-icon class="close" name="ios-close" (tap)="close()"></ion-icon>
     <ion-title>Nueva Evidencia</ion-title>
   </ion-navbar>
 
@@ -21,12 +21,12 @@
 
 
 			<div class="isGood">
-				<div (click)="toggle()" class="option left" [class.selected]="isGood">a favor!</div>
-				<div (click)="toggle()" class="option right" [class.selected]="!isGood">en contra!</div>
+				<div (tap)="toggle()" class="option left" [class.selected]="isGood">a favor!</div>
+				<div (tap)="toggle()" class="option right" [class.selected]="!isGood">en contra!</div>
 			</div>
 				
 			<ion-textarea [(ngModel)]="description" rows="1" id="messageInputBox" placeholder="Descripción"></ion-textarea>
-			<button [disabled]="!data || !description" class="action" ion-button color="orangeBar" (click)="send()">Sube tu evidencia!</button>
+			<button [disabled]="!data || !description" class="action" ion-button color="orangeBar" (tap)="send()">Sube tu evidencia!</button>
 
 		</div>
 		<div *ngSwitchCase="'file'">
